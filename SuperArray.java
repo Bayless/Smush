@@ -168,38 +168,6 @@ public class SuperArray {
     }
 
 
-    //main method for testing
- 
-	/*	
-	//testing SuperJava methods
-	ListInt curtis = new SuperArray();
-	System.out.println("Printing empty SuperArray curtis...");
-	System.out.println(curtis);
-	for( int i = 0; i < 10; i++ ) {
-	curtis.add(i,i*2);
-	}
-	System.out.println("Printing populated SuperArray curtis...");
-	System.out.println(curtis);
-	System.out.println("testing get()...");
-	for( int i = 0; i < 10; i++ ) {
-	    System.out.print( "item at index " + i + ":\t" );
-	    System.out.println( curtis.get(i) );
-	}
-	ListInt bayle = new SuperArray();
-	System.out.println("Printing empty bayle");
-	System.out.println(bayle);
-	for (int i = 0; i < 10; i++){
-	    bayle.add(i * 3);
-	}
-	System.out.println("Printing numberified bayle...");
-	System.out.println(bayle);
-	System.out.println("Removing 5th element");
-	bayle.remove(4);
-	System.out.println(bayle);
-	System.out.println(bayle.size());
-
-	
-	*/
     public static void main( String[] args ) {
 	//Rational array
 	SuperArray jerry = new SuperArray();
@@ -211,9 +179,8 @@ public class SuperArray {
 	jerry.add(new Hexadecimal("4F"));
 	System.out.println("jerry:\t" + jerry);
 	
-	for (int i=0; i < jerry._size-1; i++) {
+for (int i=0; i < jerry._size-1; i++) {
 	    System.out.println("jerry._data[" + i + "]:\t" + jerry.get(i) +
-			       "\njerry._data[" + (i+1) + "]:\t" + jerry.get(i) +
 			       "\njerry._data[" + (i+1) + "]:\t" + jerry.get(i+1) +
 			       "\ncompare:\t" +
 			       jerry.get(i).compareTo(jerry.get(i+1)) + "\n");

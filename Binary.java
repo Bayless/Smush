@@ -185,10 +185,10 @@ public class Binary implements Comparable {
 	}
 	if (other instanceof Rational){
 
-	    if (((Rational)other)._decNum == this._decNum){
+	    if (((Rational)other).floatValue() ==(float)( this._decNum / 1)){
 		return 0;
 	    }
-	    else if (((Rational)other)._decNum > this._decNum){
+	    else if (((Rational)other).floatValue() > (float)(this._decNum / 1)){
 		return -1;
 	    }
     

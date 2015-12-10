@@ -5,7 +5,6 @@
 public class Rational implements Comparable{
     private int numerator;
     private int denominator;
-    public float _decNum = this.floatValue();
     public Rational(){
 	numerator = 0;
 	denominator=1;
@@ -97,30 +96,30 @@ public class Rational implements Comparable{
 	}
 	if (other instanceof Hexadecimal){
 
-	    if (((Hexadecimal)other)._decNum == this._decNum){
+	    if (((Hexadecimal)other)._decNum == this.floatValue()){
 		return 0;
 	    }
-	    else if (((Hexadecimal)other)._decNum > this._decNum){
+	    else if (((Hexadecimal)other)._decNum > this.floatValue()){
 		return -1;
 	    }
 	
 	    return 1;}
 	if (other instanceof Binary){
 
-	    if (((Binary)other)._decNum == this._decNum){
+	    if (((Binary)other)._decNum == this.floatValue()){
 		return 0;
 	    }
-	    else if (((Binary)other)._decNum > this._decNum){
+	    else if (((Binary)other)._decNum > this.floatValue()){
 		return -1;
 	    }
 	    return 1;
 	}
 	if (other instanceof Rational){
 
-	    if (((Rational)other)._decNum == this._decNum){
+	    if (((Rational)other).floatValue() == this.floatValue()){
 		return 0;
 	    }
-	    else if (((Rational)other)._decNum > this._decNum){
+	    else if (((Rational)other).floatValue() > this.floatValue()){
 		return -1;
 	    }
     

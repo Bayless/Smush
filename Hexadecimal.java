@@ -160,38 +160,38 @@ public class Hexadecimal implements Comparable{
 
    public int compareTo( Object other ) {
 
-	if (! ( other instanceof Comparable) ) {
-	    throw new ClassCastException ( "\ncompareTo() input not a Hexadecimal");
-	}
-	if (other == null){
-	    throw new NullPointerException ("\ncompareTo() imput is void");
-	}
-	if (other instanceof Hexadecimal){
+       if (! ( other instanceof Comparable) ) {
+	   throw new ClassCastException ( "\ncompareTo() input not a Hexadecimal");
+       }
+       if (other == null){
+	   throw new NullPointerException ("\ncompareTo() imput is void");
+       }
+       if (other instanceof Hexadecimal){
 
-	    if (((Hexadecimal)other)._decNum == this._decNum){
-		return 0;
-	    }
-	    else if (((Hexadecimal)other)._decNum > this._decNum){
-		return -1;
-	    }
+	   if (((Hexadecimal)other)._decNum == this._decNum){
+	       return 0;
+	   }
+	   else if (((Hexadecimal)other)._decNum > this._decNum){
+	       return -1;
+	   }
 	
-	    return 1;}
-	if (other instanceof Binary){
+	   return 1;}
+       if (other instanceof Binary){
 
-	    if (((Binary)other)._decNum == this._decNum){
-		return 0;
-	    }
-	    else if (((Binary)other)._decNum > this._decNum){
-		return -1;
-	    }
-	    return 1;
+	   if (((Binary)other)._decNum == this._decNum){
+	       return 0;
+	   }
+	   else if (((Binary)other)._decNum > this._decNum){
+	       return -1;
+	   }
+	   return 1;
 	}
 	if (other instanceof Rational){
-
-	    if (((Rational)other)._decNum == this._decNum){
+	    
+	    if (((Rational)other).floatValue() == (float)(this._decNum / 1)){
 		return 0;
 	    }
-	    else if (((Rational)other)._decNum > this._decNum){
+	    else if (((Rational)other).floatValue() > (float)(this._decNum / 1)){
 		return -1;
 	    }
     
