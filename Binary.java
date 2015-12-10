@@ -158,11 +158,13 @@ public class Binary implements Comparable {
     public int compareTo( Object other ) {
 
 	if (! ( other instanceof Comparable) ) {
-	    throw new ClassCastException ( "\ncompareTo() input not a Hexadecimal");
+	    System.out.println("error!");
+	    throw new ClassCastException ( "\ncompareTo() input not comparable");
 	}
-	if (other == null){
+	else if (other == null){
 	    throw new NullPointerException ("\ncompareTo() imput is void");
 	}
+	else {
 	if (other instanceof Hexadecimal){
 
 	    if (((Hexadecimal)other)._decNum == this._decNum){
@@ -192,7 +194,9 @@ public class Binary implements Comparable {
 		return -1;
 	    }
     
-	    return 1;
+		return 1;
+	}
+	
 	}
 	return 2;
     }

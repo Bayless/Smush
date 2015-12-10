@@ -185,6 +185,9 @@ for (int i=0; i < jerry._size-1; i++) {
 			       "\ncompare:\t" +
 			       jerry.get(i).compareTo(jerry.get(i+1)) + "\n");
 	}
+Binary a = (null);
+String bad = "hi y'all, i'm not comparable!";
+System.out.print(jerry.get(0).compareTo(a));
     }//end main
     
 }
