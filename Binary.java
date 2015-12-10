@@ -3,7 +3,7 @@
 //HW43 -- This or That
 //2015-12-17
     
-public class Binary {
+public class Binary implements Comparable {
 
     private int _decNum;
     private String _binNum;
@@ -156,6 +156,12 @@ public class Binary {
       negative integer if this<input, positive integer otherwise
       =============================================*/
     public int compareTo( Object other ) {
+	
+	if (! ( other instanceof Hexadecimal) ) {
+	    throw new ClassCastException ( "\ncompareTo() input not a Hexadecimal");
+	}
+	if (other == null){
+	    throw new NullPointerException ("\ncompareTo() imput is void")
 	if (((Binary)other)._decNum == this._decNum){
 	    return 0;
 	}

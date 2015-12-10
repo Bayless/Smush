@@ -14,11 +14,11 @@
  *  ability to print meaningfully
  *****************************/
 
-public class SuperArray implements ListInt {
+public class SuperArray implements Comparable {
 
     //~~~~~INSTANCE VARS~~~~~
     //underlying container, or "core" of this data structure:
-    private int[] _data;
+    private Comparable[] _data;
 
     //position of last meaningful value
     private int _lastPos;
@@ -27,7 +27,7 @@ public class SuperArray implements ListInt {
     private  int _size;
 
     //accessors so the interface has access
-    public int[] getData(){
+    public Comparable[] getData(){
 	return _data;
     }
     public int getLastPos(){
@@ -51,7 +51,7 @@ public class SuperArray implements ListInt {
     //~~~~~METHODS~~~~~
     //default constructor initializes 10-item array
     public SuperArray() {
-	_data = (new int[10]);
+	_data = (new Comparable[10]);
 	_lastPos = (-1);
 	_size=(0);
     }
@@ -72,7 +72,12 @@ public class SuperArray implements ListInt {
 	s += "]";
 	return s;
     }
-
+    /*
+     */
+    public int linSearch(Comparable c){}
+    /*
+     */
+    publib boolean isSorted(){}
 		
     //double capacity of this SuperArray
     private void expand() {
