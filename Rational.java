@@ -5,6 +5,7 @@
 public class Rational implements Comparable{
     private int numerator;
     private int denominator;
+    public float _decNum = this.floatValue();
     public Rational(){
 	numerator = 0;
 	denominator=1;
@@ -23,8 +24,8 @@ public class Rational implements Comparable{
     public String toString(){
 	return "" + ((double)(1.0 * numerator/denominator));}
     //Convert the int/int into a single double
-    public double floatValue(){
-	return (((double) numerator)/denominator);}
+    public float floatValue(){
+	return (((float) numerator)/denominator);}
     //change your fraction  into a new fraction while maintaing the multiplier
     public void multiply(Rational r){
 	this.numerator = r.numerator * this.numerator;
@@ -86,28 +87,49 @@ public class Rational implements Comparable{
 	}
     }
 
-    public int compareTo(Comparable c){
-	
-	if (! ( c instanceof Comparable) ) {
+       public int compareTo( Object other ) {
+
+	if (! ( other instanceof Comparable) ) {
 	    throw new ClassCastException ( "\ncompareTo() input not a Hexadecimal");
 	}
-	if (c == null){
-	    throw new NullPointerException ("\ncompareTo() imput is void")
-	if(c instanceof Comparable){//Check if user entered a rational, allow it
-	    Comparable n = (Comparable)c;//MAke sure to typecast
-	    if (this.equals(n)){
+	if (other == null){
+	    throw new NullPointerException ("\ncompareTo() imput is void");
+	}
+	if (other instanceof Hexadecimal){
+
+	    if (((Hexadecimal)other)._decNum == this._decNum){
 		return 0;
-	    }else if ((double)(this.floatValue()) > (double)(n.floatValue())){
-		return 1;
-	    }else{
+	    }
+	    else if (((Hexadecimal)other)._decNum > this._decNum){
 		return -1;
 	    }
+	
+	    return 1;}
+	if (other instanceof Binary){
+
+	    if (((Binary)other)._decNum == this._decNum){
+		return 0;
+	    }
+	    else if (((Binary)other)._decNum > this._decNum){
+		return -1;
+	    }
+	    return 1;
 	}
-	else {
-	    System.out.println ("tisn't comparable");	    
-	    return 2;
+	if (other instanceof Rational){
+
+	    if (((Rational)other)._decNum == this._decNum){
+		return 0;
+	    }
+	    else if (((Rational)other)._decNum > this._decNum){
+		return -1;
+	    }
+    
+	    return 1;
 	}
+	return 2;
     }
+    
+
 
     public static void main(String[] args){
 	Rational a = new Rational(1,2);

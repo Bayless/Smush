@@ -5,8 +5,8 @@
     
 public class Binary implements Comparable {
 
-    private int _decNum;
-    private String _binNum;
+    public int _decNum;
+    public String _binNum;
 
 
     /*=====================================
@@ -156,20 +156,49 @@ public class Binary implements Comparable {
       negative integer if this<input, positive integer otherwise
       =============================================*/
     public int compareTo( Object other ) {
-	
-	if (! ( other instanceof Hexadecimal) ) {
+
+	if (! ( other instanceof Comparable) ) {
 	    throw new ClassCastException ( "\ncompareTo() input not a Hexadecimal");
 	}
 	if (other == null){
-	    throw new NullPointerException ("\ncompareTo() imput is void")
-	if (((Binary)other)._decNum == this._decNum){
-	    return 0;
+	    throw new NullPointerException ("\ncompareTo() imput is void");
 	}
-	else if (((Binary)other)._decNum > this._decNum){
-	    return -1;
+	if (other instanceof Hexadecimal){
+
+	    if (((Hexadecimal)other)._decNum == this._decNum){
+		return 0;
+	    }
+	    else if (((Hexadecimal)other)._decNum > this._decNum){
+		return -1;
+	    }
+	
+	    return 1;}
+	if (other instanceof Binary){
+
+	    if (((Binary)other)._decNum == this._decNum){
+		return 0;
+	    }
+	    else if (((Binary)other)._decNum > this._decNum){
+		return -1;
+	    }
+	    return 1;
 	}
-	return 1;
+	if (other instanceof Rational){
+
+	    if (((Rational)other)._decNum == this._decNum){
+		return 0;
+	    }
+	    else if (((Rational)other)._decNum > this._decNum){
+		return -1;
+	    }
+    
+	    return 1;
+	}
+	return 2;
     }
+    
+	
+    
 
 
     //main method for testing
